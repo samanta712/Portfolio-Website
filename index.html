@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soumita Samanta — Scientific Illustrator & Data Visualizer</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    /* Lightbox overlay */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      cursor: zoom-out;
+    }
+    .lightbox.open { display: flex; }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 2px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+      transform: scale(0.94);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      cursor: default;
+    }
+    .lightbox.open .lightbox-img {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 24px;
+      right: 32px;
+      font-size: 28px;
+      color: #fff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+      font-family: sans-serif;
+      line-height: 1;
+    }
+    .lightbox-close:hover { opacity: 1; }
+
+    /* Card image gets a zoom cursor hint */
+    .card-img.zoomable { cursor: zoom-in; overflow: hidden; }
+    .card-img.zoomable img {
+      transition: transform 0.4s ease;
+    }
+    .card-img.zoomable:hover img { transform: scale(1.04); }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Soumita Samanta</a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Scientific Illustration · Data Visualization</p>
+        <h1 class="hero-title">Where science<br><em>finds its image</em></h1>
+        <p class="hero-body">I translate complex scientific and data stories into precise, evocative visuals</p>
+        <div class="hero-actions">
+          <a href="portfolio.html" class="btn-primary">View Portfolio</a>
+          <a href="about.html" class="btn-ghost">About me</a>
+        </div>
+      </div>
+      <div class="hero-image">
+          <div class="hero-image-wrap">
+            <style>
+              .spoke-label { font-family: 'DM Sans', sans-serif; font-size: 12px; fill: #888; letter-spacing: 0.1em; text-transform: uppercase; }
+              .spoke-em { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px; font-weight: 300; fill: #1a1a18; font-style: italic; }
+              .tag-bottom { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; fill: #aaa; }
+            </style>
+
+            <svg width="100%" viewBox="0 0 680 680" role="img" xmlns="http://www.w3.org/2000/svg">
+            <title>Fluid identity chart</title>
+            <desc>A continuously morphing organic shape representing four practice areas: Scientific Illustration, Visual Storytelling, Learning Design, and Data and Code.</desc>
+
+            <defs>
+              <radialGradient id="blobfill" cx="50%" cy="45%" r="55%">
+                <stop offset="0%" stop-color="#2d5a3d" stop-opacity="0.18"/>
+                <stop offset="100%" stop-color="#2d5a3d" stop-opacity="0.04"/>
+              </radialGradient>
+              <radialGradient id="blobfill2" cx="52%" cy="52%" r="55%">
+                <stop offset="0%" stop-color="#8b4a2a" stop-opacity="0.10"/>
+                <stop offset="100%" stop-color="#8b4a2a" stop-opacity="0.02"/>
+              </radialGradient>
+            </defs>
+
+            <circle cx="340" cy="340" r="200" fill="none" stroke="#e8e4de" stroke-width="0.5"/>
+            <circle cx="340" cy="340" r="140" fill="none" stroke="#e8e4de" stroke-width="0.5"/>
+            <circle cx="340" cy="340" r="80"  fill="none" stroke="#e8e4de" stroke-width="0.5"/>
+
+            <line x1="340" y1="340" x2="340" y2="128" stroke="#e0ddd8" stroke-width="0.5"/>
+            <line x1="340" y1="340" x2="552" y2="340" stroke="#e0ddd8" stroke-width="0.5"/>
+            <line x1="340" y1="340" x2="340" y2="552" stroke="#e0ddd8" stroke-width="0.5"/>
+            <line x1="340" y1="340" x2="128" y2="340" stroke="#e0ddd8" stroke-width="0.5"/>
+
+            <path fill="url(#blobfill)" stroke="#2d5a3d" stroke-width="1.4" stroke-linejoin="round">
+              <animate attributeName="d" dur="14s" repeatCount="indefinite" calcMode="spline"
+                keySplines="0.5 0 0.5 1; 0.5 0 0.5 1; 0.5 0 0.5 1; 0.5 0 0.5 1; 0.5 0 0.5 1; 0.5 0 0.5 1; 0.5 0 0.5 1; 0.5 0 0.5 1"
+                values="
+                  M340,158 C388,158 510,240 528,310 C548,388 460,510 390,530 C318,550 200,480 168,400 C138,325 190,210 240,182 C268,166 318,158 340,158 Z;
+                  M340,145 C400,148 525,220 540,300 C558,392 475,525 395,538 C308,552 185,470 158,388 C132,310 182,198 248,168 C278,152 305,143 340,145 Z;
+                  M340,168 C375,162 498,248 520,322 C542,400 462,505 385,528 C305,552 195,492 165,408 C138,328 195,215 252,185 C282,168 312,172 340,168 Z;
+                  M340,152 C395,150 518,228 535,308 C555,398 468,518 390,534 C310,550 188,478 162,395 C138,318 188,205 250,175 C278,160 308,152 340,152 Z;
+                  M340,162 C382,158 512,235 530,312 C550,395 462,515 388,532 C312,550 192,482 164,398 C138,320 190,208 248,178 C276,164 312,165 340,162 Z;
+                  M340,148 C398,148 522,224 540,305 C560,395 472,522 392,536 C308,552 182,472 158,390 C132,312 185,202 248,170 C278,155 305,148 340,148 Z;
+                  M340,158 C390,155 515,238 532,315 C552,395 462,512 388,530 C310,550 192,484 165,400 C138,322 192,210 248,180 C276,165 312,160 340,158 Z;
+                  M340,155 C392,152 518,232 535,310 C555,395 465,518 390,533 C310,550 188,478 162,393 C136,315 188,206 250,175 C278,160 308,155 340,155 Z;
+                  M340,158 C388,158 510,240 528,310 C548,388 460,510 390,530 C318,550 200,480 168,400 C138,325 190,210 240,182 C268,166 318,158 340,158 Z
+                "/>
+            </path>
+
+            <path fill="url(#blobfill2)" stroke="#8b4a2a" stroke-width="0.8" stroke-linejoin="round" stroke-dasharray="2 5">
+              <animate attributeName="d" dur="18s" begin="2s" repeatCount="indefinite" calcMode="spline"
+                keySplines="0.5 0 0.5 1; 0.5 0 0.5 1; 0.5 0 0.5 1; 0.5 0 0.5 1; 0.5 0 0.5 1; 0.5 0 0.5 1"
+                values="
+                  M340,175 C378,170 495,250 515,325 C535,405 455,508 382,528 C308,548 202,488 175,405 C150,328 198,220 255,190 C282,175 318,178 340,175 Z;
+                  M340,162 C385,160 508,238 525,315 C545,400 462,510 385,530 C305,550 195,485 168,402 C142,322 192,212 252,182 C280,165 310,163 340,162 Z;
+                  M340,178 C372,172 492,255 512,330 C532,408 452,505 380,525 C305,545 205,490 178,408 C152,330 200,222 258,192 C284,178 315,182 340,178 Z;
+                  M340,168 C380,164 502,244 520,320 C540,402 458,510 382,530 C308,550 198,486 170,403 C144,325 195,215 254,186 C282,170 312,170 340,168 Z;
+                  M340,172 C376,168 498,248 518,322 C538,403 456,508 382,528 C308,548 200,488 172,405 C146,328 196,218 255,188 C283,172 315,175 340,172 Z;
+                  M340,165 C382,161 505,242 522,318 C542,400 460,512 384,530 C306,550 196,484 168,400 C142,322 193,213 252,183 C280,167 312,168 340,165 Z;
+                  M340,175 C378,170 495,250 515,325 C535,405 455,508 382,528 C308,548 202,488 175,405 C150,328 198,220 255,190 C282,175 318,178 340,175 Z
+                "/>
+            </path>
+
+            <circle cx="340" cy="340" r="6" fill="#2d5a3d" fill-opacity="0.3">
+              <animate attributeName="r" values="5;7;5" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1"/>
+              <animate attributeName="fill-opacity" values="0.3;0.15;0.3" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1"/>
+            </circle>
+
+            <text x="340" y="112" class="spoke-label" text-anchor="middle">Scientific</text>
+            <text x="340" y="93"  class="spoke-em"    text-anchor="middle">Illustration</text>
+
+            <text x="570" y="337" class="spoke-label" text-anchor="start">Visual</text>
+            <text x="570" y="316" class="spoke-em"    text-anchor="start">Storytelling</text>
+
+            <text x="340" y="584" class="spoke-label" text-anchor="middle">Data &amp;</text>
+            <text x="340" y="604" class="spoke-em"    text-anchor="middle">Code</text>
+
+            <text x="110" y="337" class="spoke-label" text-anchor="end">Learning</text>
+            <text x="110" y="316" class="spoke-em"    text-anchor="end">Design</text>
+
+            <text x="340" y="652" class="tag-bottom" text-anchor="middle">always in motion · always juggling</text>
+            </svg>
+          </div>
+      </div>
+    </section>
+
+    <!-- Selected work -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Selected work</h2>
+        <a href="portfolio.html" class="section-link">All projects →</a>
+      </div>
+      <div class="grid-3">
+
+          <article class="card" data-href="portfolio.html#dataviz">
+            <div class="card-img">
+              <img src="images/emission-pollution-gap.jpg" alt="Emission Pollution Gap dashboard — radial bar chart showing air pollution data across 149 countries"/>
+            </div>
+          <div class="card-body">
+            <span class="card-tag">Data Visualization</span>
+            <h3 class="card-title">The Emission Pollution Gap</h3>
+            <p class="card-desc">Who pollutes the air — and who bears the burden? An interactive dashboard and editorial infographic across 149 countries.</p>
+            <a href="https://emission-pollution-paradox.onrender.com" target="_blank" class="card-link">View live dashboard ↗</a>
+          </div>
+        </article>
+
+        <article class="card portfolio-item visible" data-category="sciillus">
+              <div class="card-img">
+                <img src="images/Processing-Pheromones.jpeg" alt="Processing Pheromones"/>
+              </div>
+            <div class="card-body">
+              <span class="card-tag">Scientific Illustration · TIFR Hyderabad</span>
+              <h3 class="card-title">Processing Pheromones</h3>
+              <p class="card-desc">Pheromone processing in Mice VNO</p>
+              
+            </div>
+          </article>
+
+     
+
+      </div>
+    </section>
+
+    <!-- About strip -->
+    <section class="about-strip">
+      <div class="about-strip-inner">
+        <div class="about-strip-text">
+          <p class="about-strip-eyebrow">About</p>
+          <h2 class="about-strip-title">Physics-trained.<br>Illustration-hearted.</h2>
+          <p class="about-strip-body">I hold a master's in physics but have built my practice at the intersection of science and visual communication — first as a scientific illustrator, now expanding into data visualization and information design.</p>
+          <a href="about.html" class="btn-primary">Read more</a>
+        </div>
+        <div class="about-strip-clients">
+          <p class="clients-label">Clients &amp; collaborators</p>
+          <ul class="clients-list">
+            <li>TIFR</li>
+            <li>IIT Madras</li>
+            <li>University of Exeter</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog preview -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">From the blog</h2>
+        <a href="blog.html" class="section-link">All posts →</a>
+      </div>
+      <div class="grid-2">
+
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-name">Soumita Samanta</p>
+      <p class="footer-tagline">Scientific Illustration · Data Visualization</p>
+      <div class="footer-links">
+        <a href="mailto:soumitasketches@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/soumita-samanta723/" target="_blank">LinkedIn</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="blog.html">Blog</a>
+      </div>
+      <p class="footer-copy">© 2026 Soumita Samanta. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">✕</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt=""/>
+  </div>
+  <script>
+    const lightbox     = document.getElementById('lightbox');
+    const lightboxImg  = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    // Add zoomable class to any card-img that contains an <img>
+    document.querySelectorAll('.card-img img').forEach(img => {
+      img.closest('.card-img').classList.add('zoomable');
+      img.closest('.card-img').addEventListener('click', (e) => {
+        e.stopPropagation(); // don't trigger card onclick
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close on overlay click or button
+    lightbox.addEventListener('click', closeLightbox);
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxImg.addEventListener('click', (e) => e.stopPropagation());
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  </script>
+</body>
+</html>

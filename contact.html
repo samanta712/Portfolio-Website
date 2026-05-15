@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Soumita Samanta</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Soumita Samanta</a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+  </nav>
+
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">Contact</p>
+    <h1 class="page-hero-title">Let's work together</h1>
+  </div>
+
+  <div class="contact-wrap">
+    <p class="contact-intro">I'm open to freelance commissions in scientific illustration, data visualization, and editorial infographics. Tell me what you're working on — I'd love to hear about it.</p>
+
+    <!-- This form uses Formspree — free, no backend needed -->
+    <!-- EDIT: replace YOUR_FORM_ID with your Formspree form ID from formspree.io -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+      <div class="form-group">
+        <label class="form-label" for="name">Your name</label>
+        <input class="form-input" type="text" id="name" name="name" placeholder="How should I address you?" required/>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">Email address</label>
+        <input class="form-input" type="email" id="email" name="email" placeholder="soumitasketches@gmail.com" required/>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="project">Type of project</label>
+        <input class="form-input" type="text" id="project" name="project" placeholder="e.g. Scientific illustration, data visualization, infographic…"/>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="message">Tell me about your project</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="What are you working on? What's the timeline and scope?" required></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">Send message</button>
+
+    </form>
+
+    <div class="contact-alt">
+      <p>Prefer to reach out directly? Email me at <a href="mailto:soumitasketches@gmail.com">soumitasketches@gmail.com</a> or find me on <a href="https://www.linkedin.com/in/soumita-samanta723/" target="_blank">LinkedIn</a>.</p>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-name">Soumita Samanta</p>
+      <p class="footer-tagline">Scientific Illustration · Data Visualization</p>
+      <div class="footer-links">
+        <a href="mailto:soumitasketches@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/soumita-samanta723/" target="_blank">LinkedIn</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="blog.html">Blog</a>
+      </div>
+      <p class="footer-copy">© 2026 Soumita Samanta. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
